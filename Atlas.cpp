@@ -958,10 +958,10 @@ void Atlas::trackMenu(){
      ui.setupUi(&dial);
      dial.setCaption("Track-Dialog");
      ui.filename->setText(track.filename);
-     ui.colorButton->setColor(track.farbe);
+     ui.colorQButton->setStyleSheet(QString("background-color:%1").arg(track.farbe.name()));
+     track.setColorButton(ui.colorQButton);
      ui.description->setText(track.description);
      ui.name->setText(track.name);
-     ui.colorButton->setColor(track.farbe);
      ui.saveTrack->setEnabled(!track.stored);
      ui.showPoints->setChecked(track.showPoints);
      track.setProfilButton(ui.profilButton);
@@ -970,7 +970,7 @@ void Atlas::trackMenu(){
      track.actualizePopupMenu();
      ui.loadTrack->setPopup(trackpopup);
      connect(trackpopup,SIGNAL(triggered(QAction*)),&track,SLOT(loadAction(QAction*)));
-     connect(ui.colorButton,SIGNAL(changed(QColor)),&track,SLOT(changeColor(QColor)));
+     connect(ui.colorQButton,SIGNAL(clicked()),&track,SLOT(changeQColor()));
      connect(ui.saveTrack,SIGNAL(clicked()),&track,SLOT(storeToGPX()));
      connect(ui.saveTrackAs,SIGNAL(clicked()),&track,SLOT(storeToGPXAs()));
      //connect(ui.loadTrack,SIGNAL(clicked()),&track,SLOT(loadFromGPX()));

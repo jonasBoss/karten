@@ -51,6 +51,7 @@ public:
     void setHatHoehe(bool on=true){hatHoehe=on;}
     Atlas*getAtlas()const{return atlas;}
     void setProfilButton(QRadioButton*but){profilButton=but;}
+    void setColorButton(QToolButton * cb){colorButton=cb;}
     int fahrzeit(const Leistungsprofil & profil, int von=0, int bis=0)const;//Liefert die Fahrzeit bei gegebenem Leistungsprofil in Sekunden.
     void actualizePopupMenu();//aktualisiert das PopupMenu nach den Datein in settings.
     static QString printLength(double l);//wenn l>10000 dann wird l in km ausgegeben sonst in m. mit Einheit.
@@ -62,10 +63,12 @@ private:
     Atlas * atlas;//zeigt ggf. auf den Atlas, zu dem der Track gehört.
     double length;//speichert Länge des Pfades. Wird von calcLength() aktualisiert.
     QRadioButton * profilButton;
+    QToolButton * colorButton;
     QMenu*popupMenu;//zeigt auf Menu mit wählbaren Tracks (s. Atlas::trackMenu())
     void interpolateAltitudes(const Integerliste & liste);
 public slots:
     void changeColor(QColor acolor);
+    void changeQColor();
     void setShowPoints(int state);//{showPoints=(state==Qt::Checked);emit(paintMe());}
     void storeToGPX();//speichert den Track in eine Datei.
     void storeToGPXAs(){filename=QString();storeToGPX();}

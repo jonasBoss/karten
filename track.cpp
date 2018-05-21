@@ -16,7 +16,7 @@ Track::Track(Atlas *at)
   hatHoehe=false;
   interpolated=false;
   atlas=at;
-  popupMenu=0;profilButton=0;
+  popupMenu=0;profilButton=0;colorButton=0;
 }
 
 Track &Track::operator=(const Track &t)
@@ -25,6 +25,7 @@ Track &Track::operator=(const Track &t)
     farbe=t.farbe;filename=t.filename;name=t.name;points=t.points;
     showPoints=t.showPoints;stored=t.stored;atlas=t.atlas;hatHoehe=t.hatHoehe;
     interpolated=t.interpolated;length=t.length;popupMenu=t.popupMenu;profilButton=t.profilButton;
+    colorButton=t.colorButton;
     return *this;
 }
 void Track::loadFromGPX(QString afilename){
@@ -486,6 +487,13 @@ Trackpoint Track::getTrackpoint(double rel)
 void Track::changeColor(QColor acolor){
   farbe=acolor;
   emit(paintMe());
+}
+
+void Track::changeQColor()
+{
+    farbe=QColorDialog::getColor(farbe,0,trUtf8("Farbe für den Track"),QColorDialog::ShowAlphaChannel);
+    colorButton->setStyleSheet(QString("background-color:%1").arg(farbe.name()));
+    emit(paintMe());
 }
 Tileset Track::getTileset(short z, short environ){
   Tileset set;

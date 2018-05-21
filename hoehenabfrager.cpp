@@ -1,6 +1,6 @@
 #include "hoehenabfrager.h"
 #include "region.h"
-#include "polylineencoder.h"
+#include "elevationapiencoder.h"
 #include <QtAlgorithms>
 #include <QtCore>
 #include <QtGui>

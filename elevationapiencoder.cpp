@@ -3,7 +3,7 @@
 #include <assert.h>
 #include <cmath>
 
-#include "polylineencoder.h"
+#include "elevationapiencoder.h"
 
 static const double s_presision   = 100000.0;
 static const int    s_chunkSize   = 5;
