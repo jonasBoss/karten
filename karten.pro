@@ -16,6 +16,7 @@ HEADERS += ukartendownload.h \
     track.h \
     upopupmenu.h \
     settingdialog.h \
+    terminallog.h \
     timedtrackpoint.h \
     timedtrack.h \
     timedtrackdialog.h \
@@ -23,7 +24,8 @@ HEADERS += ukartendownload.h \
     hoehenprofil.h \
     hoehenabfrager.h \
     leistungsprofil.h \
-    cartesian.h
+    cartesian.h \
+    elevationapiencoder.h
 SOURCES += main.cpp \
     Atlas.cpp \
     ukartendownload.cpp \
@@ -36,6 +38,7 @@ SOURCES += main.cpp \
     track.cpp \
     upopupmenu.cpp \
     settingdialog.cpp \
+    terminallog.cpp \
     timedtrackpoint.cpp \
     timedtrack.cpp \
     timedtrackdialog.cpp \
@@ -43,7 +46,8 @@ SOURCES += main.cpp \
     hoehenprofil.cpp \
     hoehenabfrager.cpp \
     leistungsprofil.cpp \
-    cartesian.cpp
+    cartesian.cpp \
+    elevationapiencoder.cpp
 FORMS = kartendownload_qt4.ui \
     mapserverdialog.ui \
     waypointdialog.ui \
@@ -52,11 +56,11 @@ FORMS = kartendownload_qt4.ui \
     trackdialog.ui \
     settingdialog.ui \
     changeUserAgent.ui \
+    terminallog.ui \
     timedtrackdialog.ui \
     tracktimer.ui \
     hoehendialog.ui
-LIBS += ../terminal/terminallog.o ../terminal/moc_terminallog.o ../Karten/GoogleElevationAPI/src/polylineencoder.o
-INCLUDEPATH += "../terminal" "./GoogleElevationAPI/src"
+
 
 # The following line was inserted by qt3to4
 # CONFIG += uic

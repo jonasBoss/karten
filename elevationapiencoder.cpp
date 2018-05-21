@@ -1,0 +1,138 @@
+#include <tuple>
+#include <cinttypes>
+#include <assert.h>
+#include <cmath>
+
+#include "polylineencoder.h"
+
+static const double s_presision   = 100000.0;
+static const int    s_chunkSize   = 5;
+static const int    s_asciiOffset = 63;
+static const int    s_5bitMask    = 0x1f; // 0b11111 = 31
+static const int    s_6bitMask    = 0x20; // 0b100000 = 32
+
+void PolylineEncoder::addPoint(double latitude, double longitude)
+{
+    assert(latitude <= 90.0 && latitude >= -90.0);
+    assert(latitude <= 180.0 && latitude >= -180.0);
+    
+    m_polyline.emplace_back(latitude, longitude);
+}
+
+std::string PolylineEncoder::encode() const
+{
+    return encode(m_polyline);
+}
+
+std::string PolylineEncoder::encode(double value)
+{
+    int32_t e5 = std::round(value * s_presision); // (2)
+
+    e5 <<= 1;                                     // (4)
+
+    if (value < 0) {
+        e5 = ~e5;                                 // (5)
+    }
+
+    bool hasNextChunk = false;
+    std::string result;
+
+    // Split the value into 5-bit chunks and convert each of them to integer
+    do {
+        int32_t nextChunk = (e5 >> s_chunkSize); // (6), (7) - start from the left 5 bits.
+        hasNextChunk = nextChunk > 0;
+
+        int charVar = e5 & s_5bitMask;           // 5-bit mask (0b11111 == 31). Extract the left 5 bits.
+        if (hasNextChunk) {
+            charVar |= s_6bitMask;               // (8)
+        }
+        charVar += s_asciiOffset;                // (10)
+        result += (char)charVar;                 // (11)
+
+        e5 = nextChunk;
+    } while (hasNextChunk);
+
+    return result;
+}
+
+std::string PolylineEncoder::encode(const PolylineEncoder::Polyline &polyline)
+{
+    std::string result;
+
+    // The first segment: offset from (.0, .0)
+    double latPrev = .0;
+    double lonPrev = .0;
+
+    for (const auto &tuple : polyline)
+    {
+      const auto lat = std::get<0>(tuple);
+      const auto lon = std::get<1>(tuple);
+
+      // Offset from the previous point
+      result.append(encode(lat - latPrev));
+      result.append(encode(lon - lonPrev));
+
+      latPrev = lat;
+      lonPrev = lon;
+    }
+
+    return result;
+}
+
+double PolylineEncoder::decode(const std::string &coords, size_t &i)
+{
+    assert(i < coords.size());
+
+    int32_t result = 0;
+    int shift = 0;
+    char c = 0;
+    do {
+        c = coords.at(i++);
+        c -= s_asciiOffset;      // (10)
+        result |= (c & s_5bitMask) << shift;
+        shift += s_chunkSize;    // (7)
+    } while (c >= s_6bitMask);
+
+    if (result & 1) {
+        result = ~result;        // (5)
+    }
+    result >>= 1;                // (4)
+
+    // Convert to decimal value.
+    return result / s_presision; // (2)
+}
+
+PolylineEncoder::Polyline PolylineEncoder::decode(const std::string &coords)
+{
+    PolylineEncoder::Polyline polyline;
+
+    size_t i = 0;
+    while (i < coords.size())
+    {
+        auto lat = decode(coords, i);
+        auto lon = decode(coords, i);
+
+        if (!polyline.empty()) {
+            const auto &prevPoint = polyline.back();
+            lat += std::get<0>(prevPoint);
+            lon += std::get<1>(prevPoint);
+        }
+        polyline.emplace_back(lat, lon);
+    }
+
+    return polyline;
+}
+
+const PolylineEncoder::Polyline &PolylineEncoder::polyline() const
+{
+    return m_polyline;
+}
+
+void PolylineEncoder::clear()
+{
+    m_polyline.clear();
+}
+int PolylineEncoder::size()
+{
+  return m_polyline.size();
+}
