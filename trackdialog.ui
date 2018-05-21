@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>486</width>
-    <height>549</height>
+    <width>347</width>
+    <height>483</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -77,25 +77,15 @@
        <property name="text">
         <string>Fa&amp;rbe</string>
        </property>
-       <property name="buddy">
-        <cstring>colorButton</cstring>
-       </property>
       </widget>
      </item>
      <item>
-      <widget class="KColorButton" name="colorButton">
-       <property name="toolTip">
-        <string>In dieser Farbe wird der Pfad gezeichnet</string>
+      <widget class="QToolButton" name="colorQButton">
+       <property name="styleSheet">
+        <string notr="true">background-color : #FF0000;</string>
        </property>
-       <property name="defaultColor" stdset="0">
-        <color alpha="180">
-         <red>0</red>
-         <green>0</green>
-         <blue>255</blue>
-        </color>
-       </property>
-       <property name="alphaChannelEnabled" stdset="0">
-        <bool>true</bool>
+       <property name="text">
+        <string> </string>
        </property>
       </widget>
      </item>
@@ -369,16 +359,8 @@ Das gleiche erreicht man mit der Taste Entf,  wenn die Maus auf einem Punkt steh
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KColorButton</class>
-   <extends>QPushButton</extends>
-   <header>kcolorbutton.h</header>
-  </customwidget>
- </customwidgets>
  <tabstops>
   <tabstop>name</tabstop>
-  <tabstop>colorButton</tabstop>
   <tabstop>deleteTrack</tabstop>
   <tabstop>deletePoint</tabstop>
   <tabstop>buttonBox</tabstop>

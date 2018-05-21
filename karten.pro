@@ -1,7 +1,6 @@
 TEMPLATE = app
 LANGUAGE = C++
 QT += qt3support core gui xml
-LIBS += -lkdeui
 CONFIG += qt \
     warn_on
 #    release
