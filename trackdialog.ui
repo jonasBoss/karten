@@ -77,6 +77,9 @@
        <property name="text">
         <string>Fa&amp;rbe</string>
        </property>
+       <property name="buddy">
+        <cstring>colorQButton</cstring>
+       </property>
       </widget>
      </item>
      <item>
@@ -85,7 +88,7 @@
         <string notr="true">background-color : #FF0000;</string>
        </property>
        <property name="text">
-        <string> </string>
+        <string/>
        </property>
       </widget>
      </item>
