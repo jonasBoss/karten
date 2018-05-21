@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>drachen.png</file>
+        <file>window-close.png</file>
+        <file>media-playback-start.png</file>
+        <file>media-playback-pause.png</file>
+        <file>media-seek-backward.png</file>
+        <file>media-seek-forward.png</file>
+        <file>view-form.png</file>
+        <file>drachen_blau.png</file>
+        <file>preferences-system-time.png</file>
+        <file>kugel2.jpg</file>
+        <file>weltkugel.png</file>
+        <file>drachen_gelb.png</file>
+        <file>drachen_gruen.png</file>
+    </qresource>
+</RCC>

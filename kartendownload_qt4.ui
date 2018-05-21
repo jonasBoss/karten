@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Kartendownload</class>
+ <widget class="QDialog" name="Kartendownload">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>816</width>
+    <height>518</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Kartendownload</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_5">
+   <item>
+    <widget class="QLabel" name="titelLabel">
+     <property name="font">
+      <font>
+       <family>Linux Biolinum O</family>
+       <pointsize>14</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+       <underline>true</underline>
+      </font>
+     </property>
+     <property name="text">
+      <string>Karten-Download-Manager</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::PlainText</enum>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_11">
+     <item>
+      <widget class="QLabel" name="textLabel5">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>&amp;Zielverzeichnis</string>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+       <property name="buddy">
+        <cstring>downloadFolder</cstring>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="downloadFolder">
+       <property name="minimumSize">
+        <size>
+         <width>250</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>./</string>
+       </property>
+       <property name="frame">
+        <bool>true</bool>
+       </property>
+       <property name="readOnly">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="selectFolderButton">
+       <property name="text">
+        <string>...</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_9">
+     <item>
+      <widget class="QPushButton" name="defaultMapserverButton">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:x-large; font-weight:600;&quot;&gt;Default Mapserver&lt;/span&gt;&lt;/p&gt;&lt;p&gt;... für jedes Kartenverzeichnis kann man einen Mapserver festlegen, der bei der Auswahl dieses Verzeichnisses als Zielverzeichnis ausgewählt wird. Im Nachhinein kann man dann immer noch unten einen anderen Mapserver wählen, falls man für bestimmte Zoomstufen die Karten eines anderen Servers verwenden will.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string>Default Mapserver für dieses Verzeichnis festlegen</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="defaultMapserverLabel">
+       <property name="text">
+        <string>(auf siehe unten)</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_10">
+     <item>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>30</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>macht alle Schritte ohne Zwischenhalt</string>
+       </property>
+       <property name="text">
+        <string notr="true"> t
+ u
+ r
+ b
+ o</string>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <item>
+              <widget class="QPushButton" name="kachellisteErstellenBut">
+               <property name="toolTip">
+                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;erstellt im Zielverzeichnis die Datei &lt;span style=&quot; font-weight:600;&quot;&gt;tilenumbers.txt&lt;/span&gt;&lt;br /&gt;und &lt;span style=&quot; font-weight:600;&quot;&gt;existingTiles.txt&lt;/span&gt;. Letztere enthält eine Liste der existierenden&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Kacheln (z.B. zum Löschen aller Kacheln)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="text">
+                <string>Kachelliste erstellen</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="nurNeue">
+               <property name="toolTip">
+                <string>Prüft, ob bereits eine Karte im Zielverzeichnis ist. Lädt eine neue nur herunter, wenn es noch keine gibt.</string>
+               </property>
+               <property name="text">
+                <string>nur neue</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="deleteTilesButton">
+               <property name="toolTip">
+                <string>löscht die in existingTiles aufgelisteten Kacheln</string>
+               </property>
+               <property name="text">
+                <string>Kacheln löschen</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <item>
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string> Zoomstufen von  </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="Zv">
+               <property name="maximum">
+                <number>18</number>
+               </property>
+               <property name="value">
+                <number>10</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="textLabel3_3_3">
+               <property name="text">
+                <string>bis</string>
+               </property>
+               <property name="wordWrap">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="Zb">
+               <property name="maximum">
+                <number>18</number>
+               </property>
+               <property name="value">
+                <number>10</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QPushButton" name="copyTilesButton">
+             <property name="toolTip">
+              <string>Kopiert die existierenden Dateien aus existingTiles.txt in ein zu wählendes Verzeichnis.</string>
+             </property>
+             <property name="whatsThis">
+              <string>&lt;h2&gt;Kacheln z.B. auf das Smartphone kopieren&lt;/h2&gt;
+Erst erstellt man eine Kachelliste aus allen zu kopierenden Kacheln, indem man den Bereich markiert und die gewünschten Zoomstufen auswählt. Dann den Button &quot;Kachelliste erstellen&quot; drücken.
+
+&lt;p&gt;Der Button &quot;Kacheln kopieren nach...&quot; öffnet einen Dialog, in dem man das Zielverzeichnis angibt. (also z.B. das Verzeichnis auf dem per USB eingebundenen Smartphone.) Innerhalb dieses Verzeichnisses wird dann eine Unterverzeichnisstruktur Z/Y/X.png.tile angelegt, bzw. diese Struktur erweitert mit den zu kopierenden Kacheln.&lt;/p&gt;</string>
+             </property>
+             <property name="text">
+              <string>Kacheln kopieren nach...</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QProgressBar" name="progressBar">
+             <property name="value">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_5">
+             <item>
+              <widget class="QComboBox" name="serverCombo">
+               <property name="minimumSize">
+                <size>
+                 <width>250</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton">
+               <property name="maximumSize">
+                <size>
+                 <width>40</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>Zum Einrichten der Mapserver</string>
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <item>
+              <widget class="QPushButton" name="downloadBut">
+               <property name="toolTip">
+                <string>Erstellt eine Downloadliste und lädt dann ggf. vom Mapserver die in tiles.txt stehenden Kacheln</string>
+               </property>
+               <property name="text">
+                <string>Download</string>
+               </property>
+               <property name="autoDefault">
+                <bool>false</bool>
+               </property>
+               <property name="default">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="renameCheck">
+               <property name="text">
+                <string>und gleich umbenennen</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QFrame" name="frame">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QLabel" name="mapserverDescription">
+              <property name="font">
+               <font>
+                <family>Linux Biolinum O</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Beschreibung des Mapservers. Die kann über ein paar Zeilen gehen. Das ist in Ordnung.</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="holdwget">
+         <property name="toolTip">
+          <string>falls Fehler beim Download auftreten, können die besser erkannt werden, wenn das Terminal-Fenster offen bleibt. In diesem Fall blockiert das Programm allerdings bis zum Schließen des Fensters.</string>
+         </property>
+         <property name="text">
+          <string>wget-Fenster offen lassen</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QPushButton" name="renameBut">
+           <property name="toolTip">
+            <string>bringt die Kacheln in die vorgesehenen Verzeichnisse</string>
+           </property>
+           <property name="text">
+            <string>Kacheln umbenennen</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="uaButton">
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Der Download geschieht mit wget. &lt;/p&gt;&lt;p&gt;wget kann sich z.B. als firefox ausgeben. Das kann nötig sein, wenn der Mapserver wget als user-agent nicht akzeptiert. &lt;/p&gt;&lt;p&gt;ein möglicher user-agent:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:26.0) Gecko/20100101 Firefox/26.0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="text">
+            <string>User-Agent ändern</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="buttonOk">
+           <property name="text">
+            <string>S&amp;chließen</string>
+           </property>
+           <property name="shortcut">
+            <string>Alt+C</string>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
+           <property name="flat">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="infolabel">
+     <property name="font">
+      <font>
+       <family>Sans Serif</family>
+      </font>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="text">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;infolabel&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;hier sieht man, was gerade geschieht&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::RichText</enum>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <tabstops>
+  <tabstop>Zv</tabstop>
+  <tabstop>Zb</tabstop>
+  <tabstop>downloadFolder</tabstop>
+  <tabstop>kachellisteErstellenBut</tabstop>
+  <tabstop>downloadBut</tabstop>
+  <tabstop>renameBut</tabstop>
+  <tabstop>buttonOk</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonOk</sender>
+   <signal>clicked()</signal>
+   <receiver>Kartendownload</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>568</x>
+     <y>538</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>selectFolderButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Kartendownload</receiver>
+   <slot>selectFolder()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>432</x>
+     <y>231</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>downloadBut</sender>
+   <signal>clicked()</signal>
+   <receiver>Kartendownload</receiver>
+   <slot>download()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>53</x>
+     <y>430</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kachellisteErstellenBut</sender>
+   <signal>clicked()</signal>
+   <receiver>Kartendownload</receiver>
+   <slot>createTileList()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>49</x>
+     <y>302</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>renameBut</sender>
+   <signal>clicked()</signal>
+   <receiver>Kartendownload</receiver>
+   <slot>renameTiles()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>49</x>
+     <y>500</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Kartendownload</receiver>
+   <slot>manageServer()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>361</x>
+     <y>393</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>256</x>
+     <y>363</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>serverCombo</sender>
+   <signal>highlighted(int)</signal>
+   <receiver>Kartendownload</receiver>
+   <slot>mapserverChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>215</x>
+     <y>384</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>331</x>
+     <y>405</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>Kartendownload</receiver>
+   <slot>turboDownload()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>19</x>
+     <y>411</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>425</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>download()</slot>
+  <slot>manageServer()</slot>
+  <slot>mapserverChanged(int)</slot>
+  <slot>displayRegion()</slot>
+  <slot>turboDownload()</slot>
+ </slots>
+</ui>

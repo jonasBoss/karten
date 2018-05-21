@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Hilfeseite zu Tracks und Waypoints</title>
+<meta charset="utf-8" />
+<style type="text/css">
+body {
+  margin: 0.5cm;
+}
+table {
+   border-style : solid;
+	border-width: 1px;
+	border-collapse: collapse;
+	align-self: center;
+	margin:20px;
+}
+td {
+  border-style: solid;
+  border-width: 1px;
+  border-collapse: collapse;
+  padding:5px;
+  vertical-align: top;
+}
+th{
+  background-color: #F0F0F0;
+}
+
+code {
+	font-weight:bolder;
+}
+
+</style>
+<title>Tracks und Waypoints</title>
+</head>
+<body>
+<h1>Tracks und Waypoints</h1>
+--> <a href="#tracks">Tracks</a>
+<h2>Waypoints</h2>
+Wegpunkte enthalten Informationen zu bestimmten Orten. Sie können als kml-Datei in andere Programme (Google-Earth, Maverick)
+exportiert werden.
+<h3>Bearbeiten von Wegpunkten mit Tastatur und Maus</h3>
+
+<table>
+<tr><th>Was</th><th>Wie</th></tr>
+<tr><td>Neuen Wegpunkt setzen</td><td>Taste <code>W</code> setzt Wegpunkt an Mausposition</td></tr>
+<tr><td>Wegpunkt löschen</td>
+     <td>Maus drauf setzen und <code>Entf</code> oder über Wegpunktdialog <code>löschen</code></td></tr>
+<tr><td>Wegpunkt setzen nach Online-Suche</td>
+      <td>Neuen Wegpunkt anlegen, als Titel den Suchbegriff eingeben und über Klick auf <code>?</code> Suche durchführen. 
+      Die Abfrage läuft nicht im Hintergrund, das Programm friert also währenddessen ein (längstenfalls 10 Sekunden).
+      <a href="#nominatim">s. Nominatim-Abfragen</a> </td>
+</tr>
+<tr>
+<td>Wegpunkte auswählen</td>
+<td>Klick auf den Wegpunkt. Es öffnet sich der Wegpunkt-Dialog</td>
+</tr>
+<tr><td>Bild eines Bildwegpunkts anzeigen</td><td>Doppelklick aufs Bild</td></tr>
+<tr><td>Liste aller Wegpunkte</td><td>Taste <code>i</code> (L-<b>i</b>-ste) oder Popupmenu (rechte Maustaste)</td></tr>
+<tr><td>Wegpunktdateien verwalten</td>
+    <td>Kontext-Menu im Kartenfenster (Rechtsklick) <code>Wegpunkte und Pfade</code><br/>
+        Taste <code>L</code> lädt Wegpunkt-Datei.
+    </td></tr>
+<tr>
+<td>Trackpunkt auswählen</td><td>Klick darauf. Der Trackpoint wird als aktuell markiert. (siehe <a href="track_waypoint.html"> Umgang mit Tracks</a>)</td>
+</tr>
+</table>
+<h3>Bild-Waypoints</h3>
+ Eine Besonderheit sind Bilder als Waypoint. Zieht man Bilder auf das Kartenfenster, die einen Geo-Tag haben, 
+ dann wird daraus ein Bild-Waypoint. 
+ <p><b>Die Voraussetzung dafür, dass das klappt, ist, dass das externe Programm exiftools installiert ist.</b>
+ Das wird verwendet, um aus den Bildern das Geotag herauszulesen.
+ </p>
+ Die Beschreibung des Waypoints
+ enthält den Pfad zu dem Bild und darf nicht verändert werden, sonst wird der Bild-Waypoint nicht mehr als solcher erkannt.
+<h4>Bilder anschauen</h4>
+Doppelklick aufs Vorschaubild. Es wird zum Anzeigen das Programm verwendet, das dem Bild-dateityp zugeordnet ist.
+Die Größe der Vorschaubilder kann in den Einstellungen festgelegt werden. 
+ 
+<h3><a name="nominatim"></a>
+Nominatim-Abfragen bei Openstreetmap</h3>
+Zur Abfrage der Geokoordinaten von Orten wird der Openstreetmap-Nominatim-Server angefragt. Dessen
+<a href="https://wiki.openstreetmap.org/wiki/DE:Nominatim#Nutzungsbedingungen">Nutzungsbedingungen</a> 
+sind zu beachten.<br/>
+Gestartet wird eine solche Abfrage mit dem ?-Button neben dem Titel im Waypoint-Dialog.<br/>
+Mehr dazu siehe: <a href="https://wiki.openstreetmap.org/wiki/DE:Nominatim">https://wiki.openstreetmap.org/wiki/DE:Nominatim</a>
+<br/>
+Hier erfährt man auch mehr über die Möglichkeiten, Abfragen zu verfeinern.
+ 
+ <h2><a name="tracks"></a>Tracks</h2>
+ Tracks sind miteinander durch gerade Linien verbundene Punkte.
+ <h3>Bearbeiten von Tracks mit Maus und Tastatur</h3>
+ <table>
+ <tr><th>Was</th><th>Wie</th></tr>
+<tr><td>Trackmenu öffnen</td><td>Taste <code>T</code> oder über Popupmenu </td></tr>
+<tr><td>Trackpunkt einfügen</td><td>Taste <code>x</code> E<b>x</b>tend Track
+    <p>Der Trackpunkt wird hinter dem aktuellen Punkt eingefügt, der daran  zu erkennen ist, dass er hohl gezeichnet wird - 
+    sofern die Trackpunkte überhaupt gezeichnet werden. Der Streckenabschnitt hinter dem aktuellen Punkt (sofern dies nicht der letzte ist)
+    wird gestrichelt gezeichnet. Der erste Trackpunkt wird auch mit <code>x</code> eingefügt.
+    </p></td></tr>
+<tr><td>Trackpunkt löschen</td><td> Trackpunkte anzeigen, Maus auf zu löschenden Punkt setzen und <code>Entf</code>-Taste.</td></tr>
+<tr><td>Tracksegment löschen</td><td>letzten Punkt zum aktuellen machen und im Trackmenu wiederholt
+   <code>aktuellen Punkt löschen</code> wählen.</td></tr>
+<tr><td>Trackpunkte anzeigen</td><td>Trackmenu (T) aufrufen, dort entsprechende Option wählen</td></tr>
+<tr><td>Trackpunkt zum aktuellen machen</td><td>Trackpunkte anzeigen lassen und Trackpunkt anklicken.</td></tr>
+ <tr><td>Track hinten ergänzen</td><td>letzten Trackpunkt zum aktuellen machen und weitere Punkte mit <code>x</code>
+   einfügen.</td></tr>
+ <tr><td>vor ersten Punkt Punkte einfügen</td><td><code>Punktreihenfolge umkehren</code> im Trackmenu wählen.
+    Damit wird der erste zum letzten Punkt. Diesen zum aktuellen machen und mit <code>x</code> weitere anfügen.</td></tr> 
+ <tr><td>Tracks speichern und laden</td><td>Trackmenu</td></tr>
+ </table>
+<h3>Auswerten von Tracks</h3>
+Beim Fahren mit der Maus über den Track im Karten-Fenster wird bei jedem Trackpoint die Entfernung vom Anfang bis zu diesem Punkt angezeigt.
+Eine weitergehende Auswertung liefern <a href="hoehenprofile.html">Höhenprofile</a>
+<h4>Weiterverwenden von Tracks auf anderen Geräten</h4>
+Null Problemo. In Maverick muss der Track nur in das Verzeichnis Tracks übertragen werden. Google-earth kann diese Tracks auch lesen.
+</body>
+</html>

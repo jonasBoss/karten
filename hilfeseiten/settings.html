@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Hilfeseite zum Atlas-Programm</title>
+<meta charset="utf-8" />
+<style type="text/css">
+body {
+  margin: 0.5cm;
+}
+table {
+   border-style : solid;
+	border-width: 1;
+	border-collapse: collapse;
+}
+td {
+  border-style: solid;
+  border-width: 1;
+  padding:5px;
+}
+</style>
+<title>Hilfe zum Einstellungsdialog</title>
+</head>
+<body>
+<h2>Einstellungen</h2>
+Für viele Felder existieren Tool-Tips. Die könnten schon helfen.
+<h3>Mapserverdefinitionen</h3>
+Enthalten Angaben über Mapserver, von denen man Karten laden kann. Diese Datei
+ist im Atlasprogrammverzeichnis enthalten und kann am einfachsten vom Programm 
+selber aus dem Kartendownloaddialog heraus bearbeitet werden
+<h3>Pfad zu den Karten</h3>
+Beim Programmstart werden die Karten aus diesem Verzeichnis geladen. In diesem 
+Verzeichnis befinden sich alle tiles, die verwendet werden. Die Kachel <i>(x,y)</i> der Zoomstufe <i>z</i>
+ist im Unterverzeichnis <i>z/x/</i> als Datei <i>y.png.tile</i>. Dieses Kartenverzeichnis kann jederzeit über das Popupmenu oder die
+Taste <code>K</code> geändert werden.
+<p>Zum Programmstart beginnt man hier mit dem mitgelieferten Verzeichnis <i>OpenTopoMap</i> im Kartenprogrammverzeichnis</p>
+<h3>Datei mit Leistungsprofilen</h3>
+Hier startet man am Besten auch mit dem mitgelieferten <i>leistungsprofile.txt</i> im Kartenprogrammverzeichnis.
+Mehr über Leistungsprofile in <a href="hoehenprofile.html">Höhenprofile</a>.
+<h3>Google-API-Key</h3>
+...ist notwendig für die Abfragen geografischer Höhen aus der Google-Datenbank. Ohne den key funktioniert dieser Teil nicht.
+Mehr dazu und wie man ihn anfordert unter <a href="https://developers.google.com/maps/documentation/elevation/intro?hl=de">
+https://developers.google.com/maps/documentation/elevation/intro?hl=de</a> <br/>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>hilfeseiten/hoehenprofile.html</file>
+        <file>hilfeseiten/atlas.html</file>
+        <file>hilfeseiten/track_waypoint.html</file>
+        <file>hilfeseiten/settings.html</file>
+    </qresource>
+</RCC>
