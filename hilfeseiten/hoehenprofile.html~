@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Hilfeseite zu Höhenprofilen</title>
+<style type="text/css">
+body {
+  margin: 0.5cm;
+}
+table {
+   border-style : solid;
+	border-width: 1px;
+	border-collapse: collapse;
+	align-self: center;
+	margin:20px;
+}
+td {
+  border-style: solid;
+  border-width: 1px;
+  border-collapse: collapse;
+  padding:5px;
+  vertical-align: top;
+}
+th{
+  background-color: #F0F0F0;
+}
+
+code {
+	font-weight:bolder;
+}
+
+</style>
+</head>
+<body>
+<h1>Höhenprofile</h1>
+<a href="#Leistungsprofile">zu den Leistungsprofilen</a>
+<p>
+Höhenprofile können von Tracks mit Höhendaten angezeigt werden.
+Es gibt zwei Wege zu Höhendaten zu kommen</p>
+<ol>
+<li>
+Abfrage bei Google: dazu braucht man einen API-Key, der in den Einstellungen zu hinterlegen ist. Zu beziehen über
+<a href="https://developers.google.com/maps/documentation/elevation/get-api-key?hl=de">
+https://developers.google.com/maps/documentation/elevation/get-api-key?hl=de</a>
+</li>
+<li>Interpolation: das hat nur Sinn, wenn Höhendaten für Punkte vorhanden sind. Die restlichen werden dann interpoliert.
+Google könnte auch mal falsche Daten liefern. Diese Punkte kann man dann löschen und wieder einfügen. Anschließend durch Interpolation
+deren Höhe gewinnen.
+</li>
+</ol>
+<h2>Shortcuts und Mausmöglichkeiten im Höhenprofilfenster</h2>
+<table>
+<tr>
+<td>
+Fenster Schließen
+</td>
+<td>Backspace oder übers Track-Menu</td>
+</tr>
+<tr><td>Größe des Höhenprofils ändern</td>
+<td>Shift-nach oben bzw. Shift-nach unten. Oder an der entsprechenden Markierung im Fenster ziehen.
+</td></tr>
+<tr><td>Teiltrack markieren zur Auswertung</td><td>Maus ziehen mit linker Maustaste</td></tr>
+<tr><td>In Teiltrack zoomen</td><td>Taste <code>Z</code> </td></tr>
+<tr><td>Aus Teiltrack herauszoomen</td><td>Taste <code>Z</code>. Danach wird der Teiltrack als Auswahl sichtbar gemacht.</td></tr>
+<tr><td>Auswertung anzeigen</td><td>übers Kontextmenu (rechte Maustaste). </td></tr>
+<tr><td>Kontextmenu</td><td>rechte Maustaste</td></tr>
+<tr><td>Auswertungsfenster schließen</td><td>Esc-Taste oder Kontextmenu</td></tr>
+<tr><td>Hilfe anfordern</td><td>F1</td></tr>
+</table>
+Damit bei der Trackauswertung Geh- bzw. Fahrzeiten kalkuliert
+werden können, muss ein Leistungsprofil gewählt werden.
+<a name="Leistungsprofile"></a>
+<h2>Leistungsprofile</h2>
+Geben an, bei welcher Steigung wie schnell gefahren/gewandert wird. Die Daten werden aus einer
+in den Einstellungen anzugebenden Datei gelesen. Das Format dieser Datei ist wie folgt:
+<h3>Format der Leistungsprofildatei</h3>
+<p>es ist eine einfache Textdatei und somit mit jedem Editor zu bearbeiten.
+</p>
+<p align="center">
+<table>
+<tr>
+<td>Erste Zeile</td>
+<td>ein beschreibender Text, wie <em>Wandern, gemütlich</em></td>
+</tr>
+<tr>
+<td valign="top">weitere Zeilen</td>
+<td>jede weitere Zeile enthält zwei durch Strichpunkt getrennte Zahlen mit Punkt als Dezimaltrenner.
+Beispiel:
+<br /><code> 0.05 ; 1.2</code><br />
+gibt an: bei 5 % Steigung ist die Geschwindigkeit 1.2
+</td></tr>
+<tr>
+<td>Leerzeile</td>
+<td>
+Eine Profildefinition muss mit einer Leerzeile abschließen. Danach kann nach dem gleichen 
+Schema die nächste folgen.
+</td>
+</tr>
+</table></p>
+<p>Zeilen, die mit einer Raute beginnen, werden als Kommentare ignoriert.</p>
+</body>

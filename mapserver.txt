@@ -1,0 +1,10 @@
+Open Streetmap - Mapnik	http://tile.openstreetmap.org/	[z]/[x]/[y].png	keine Beschreibung
+Open Cyclemap	https://b.tile.thunderforest.com/cycle/	[z]/[x]/[y].png	gut für Radtouren. Wie Mapnik auf Radtouren angepasst. Der erste Buchstabe der URL kann wohl a,b,c oder nix sein?
+Open Topo Map	http://a.tile.opentopomap.org/	[z]/[x]/[y].png	freie topografische Karten. sehr kontrastreich.
+OSM Transport	https://a.tile.thunderforest.com/transport/	[z]/[x]/[y].png  Zeigt Linien öffentlicher Verkehrsmittel
+Outdoor Active Österreich	http://s3.outdooractive.com/austria/map/	[z]/[x]/[y].png	mit t0 klappt es nicht.
+Outdoor Active Südtirol	http://t0.outdooractive.com/suedtirol/map/	[z]/[x]/[y].png	keine Beschreibung
+ODBL Coverage	http://osm.informatik.uni-leipzig.de/osm_tiles2/	[z]/[x]/[y].png	z=5-18, OpenStreetmap ?
+ÖPNV-Karte	http://tile.memomaps.de/tilegen/	[z]/[x]/[y].png	bis z=18 http://öpnvkarte.de
+Mapquest_neu	https://otile3-s.mqcdn.com/tiles/1.0.0/map/	[z]/[x]/[y].png	wird auch bei geocaching verwendet.
+Outdooractive Polen	http://s0.outdooractive.com/osm/OSMSummer/	[z]/[x]/[y].png	in Polen?

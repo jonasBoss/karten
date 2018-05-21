@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.0">
+<trk>
+  <name>neuer Track</name>
+  <description>mit Beschreibung</description>
+<trkseg>
+<trkpt lat="48.2218" lon="8.20687"></trkpt>
+<trkpt lat="48.2229" lon="8.20252"></trkpt>
+<trkpt lat="48.2202" lon="8.20112"></trkpt>
+<trkpt lat="48.2195" lon="8.20453"></trkpt>
+</trkseg>
+</trk>
+</gpx>
