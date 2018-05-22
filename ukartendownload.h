@@ -58,7 +58,7 @@ public slots:
   void on_uaButton_clicked();
   void on_defaultMapserverButton_clicked();
   void mapserverChanged(int);
-  void settingsChanged();
+  void readSettings();
 signals:
   void downloadReady();
 };

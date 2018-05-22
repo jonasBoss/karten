@@ -523,7 +523,7 @@ void UKartendownload::mapserverChanged(int i){
     mapserverDescription->setText(mapserver.descriptions[i]);
 }
 
-void UKartendownload::settingsChanged()
+void UKartendownload::readSettings()
 {
     QSettings settings("UBoss","karten");
     QString mapserverfile=settings.value("mapserverfile").toString();
@@ -622,6 +622,11 @@ bool Mapserver::readFromFile(const QString filename){
   while(!f.atEnd()){
     z=f.readLine(300);
     QStringList l=QString(z).split('\t');
+    if(l.count()<4){
+        QMessageBox::warning(0,"Fehler entdeckt:",QString::fromUtf8("Die Datei mapserver.txt enthält Fehler"
+             "Jede Zeile muss vier durch Tabulator getrennte Spalten haben."));
+        continue;
+    }
     names<<l[0];bases<<l[1];tileurls<<l[2];descriptions<<l[3].trimmed();
   }
   f.close();
