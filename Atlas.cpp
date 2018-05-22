@@ -541,6 +541,7 @@ void Atlas::showDownloadDialog(bool force){
     downloadDialog->setAttribute(Qt::WA_QuitOnClose,false);//das Programm kann sich beenden auch wenn dieses Fenster noch offen ist.
 //    connect(downloadDialog->anzeigeButton,SIGNAL(clicked()),this,SLOT(changeRegion()));
     connect(downloadDialog,SIGNAL(downloadReady()),this,SLOT(newPaint()));
+    connect(this,SIGNAL(settingsChanged()),downloadDialog,SLOT(readSettings()));//muss noch implementiert werden.
   }
   mouseRect=mouseRect.normalize();
   downloadDialog->setRegion(getMousePosition(mouseRect.bottomLeft()),getMousePosition(mouseRect.topRight()));
@@ -1081,6 +1082,7 @@ void Atlas::settings(){
      SettingDialog * dial=new SettingDialog(this);
      connect(dial,SIGNAL(pixmapSizeChanged(int)),this,SLOT(resizeWaypointPixmaps(int)));
      dial->setAttribute(Qt::WA_DeleteOnClose);
+     connect(dial,SIGNAL(destroyed(QObject*)),this,SIGNAL(settingsChanged()));
      dial->show();
      //delete dial;
 }

@@ -520,7 +520,20 @@ void UKartendownload::on_defaultMapserverButton_clicked()
 }
 
 void UKartendownload::mapserverChanged(int i){
-  mapserverDescription->setText(mapserver.descriptions[i]);
+    mapserverDescription->setText(mapserver.descriptions[i]);
+}
+
+void UKartendownload::settingsChanged()
+{
+    QSettings settings("UBoss","karten");
+    QString mapserverfile=settings.value("mapserverfile").toString();
+    mapserver.clear();
+    if(mapserver.readFromFile(mapserverfile)){
+      serverCombo->clear();
+      serverCombo->insertStringList(mapserver.names);
+      mapserverDescription->setText(mapserver.descriptions[0]);
+      serverCombo->setCurrentIndex(settings.value("mapserverNr",0).toInt());
+    }
 }
 /** Ab hier die Methoden der Klasse Mapserver **/
 QString Mapserver::getTileUrl(int i,uint x,uint y, uint z){

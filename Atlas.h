@@ -108,5 +108,6 @@ signals:
     void viewportChanged(); //wird emittiert, wenn die Anzeige sich ändert
     void resized(); //wird vom resizeEvent aufgerufen
     void mouseMoved(); //wird bei jeder Mausbewegung emittiert. (weiß nicht, ob das gut ist)
-};
+    void settingsChanged(); //wird emittiert, wenn über settings() die Settings geändert werden.
+ };
 #endif

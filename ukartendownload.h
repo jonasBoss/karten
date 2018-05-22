@@ -28,7 +28,7 @@ class Mapserver{
   friend istream& operator>>(istream&s,Mapserver & server);
   bool readFromFile(const QString filename);
   void writeToFile(const QString filename);
-  void clear();//lÃ¶scht alle Daten.
+  void clear();//löscht alle Daten.
   QString getTileUrl(int i,uint x,uint y, uint z);//liefert den Teil nach base;
   void append(QString name,QString base,QString tileurl,QString description="keine Beschreibung");
 };
@@ -58,6 +58,7 @@ public slots:
   void on_uaButton_clicked();
   void on_defaultMapserverButton_clicked();
   void mapserverChanged(int);
+  void settingsChanged();
 signals:
   void downloadReady();
 };
