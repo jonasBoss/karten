@@ -153,6 +153,10 @@ void Hoehenprofil::mouseMoveEvent(QMouseEvent *e)
 
 void Hoehenprofil::paintEvent(QPaintEvent *)
 {    
+    if(track->points.count()<2){
+        deleteLater();
+        return;
+    }
     QPainter painter(this);
     //murks=false;
     painter.setRenderHint(QPainter::Antialiasing);

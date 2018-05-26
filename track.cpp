@@ -187,6 +187,7 @@ void Track::loadAction(QAction *action)
 void Track::clear(){
   points.clear();stored=false;currentIndex=-1;
   filename="";
+
   emit(toSave(false));emit(paintMe());
   emit filenameChanged(filename);
   calcLength();
